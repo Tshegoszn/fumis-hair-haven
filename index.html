@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fumi’s Hair Haven | Luxury Wig Salon</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    
+    <div class="logo-text">Fumi’s Hair Haven</div>
+
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#booking">Book</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Luxury Wig Installation & Styling</h1>
+      <p>Private luxury hair services in Hatfield.</p>
+      <a href="#booking" class="btn">Book Appointment</a>
+    </div>
+   
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Fumi’s Hair Haven</h2>
+    <p>
+      Fumi’s Hair Haven is a private wig services in Hatfield, <br>offered by appointment only  offering  wig installation,<br>
+
+      styling, and customisation services. We specialise in creating flawless,<br>
+      natural-looking finishes in a calm a environment.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section light">
+    <h2>Our Services</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Wig Installation</h3>
+        <p>Secure, natural-looking wig installation tailored to you.</p>
+      </div>
+
+      <div class="card">
+        <h3>Installation & Styling</h3>
+        <p>Complete installation with luxury styling finish.</p>
+      </div>
+
+      <div class="card">
+        <h3>Customisation Combo</h3>
+        <p>Bleaching, plucking, styling, and fitting combined.</p>
+      </div>
+
+      <div class="card">
+        <h3>Wig Laundry</h3>
+        <p>For a long-lasting installation, a clean wig is essential!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+<section id="booking" class="section">
+  <h2>Book an Appointment</h2>
+  <p class="booking-note">Appointments are confirmed via WhatsApp.</p>
+<p class="pre-booking-note">
+  Please read our <a href="#policies">Policies & Payments</a> carefully before booking.
+</p>
+
+  <form id="bookingForm">
+
+    <input type="text" id="clientName" placeholder="Your Name" required />
+
+    <!-- SERVICE -->
+    <select id="service" required>
+      <option value="">Select Service</option>
+      <option value="installation">Wig Installation</option>
+      <option value="install-style">Installation & Styling</option>
+      <option value="customisation">Customisation</option>
+      <option value="laundry">Wig Laundry</option>
+    </select>
+
+    <!-- CUSTOMISATION OPTIONS -->
+  <div id="customOptions" class="option-group">
+  <label class="checkbox-row">
+    <input type="radio" name="customType" value="bleaching">
+    <span>Bleaching (R120)</span>
+  </label>
+
+  <label class="checkbox-row">
+    <input type="radio" name="customType" value="plucking">
+    <span>Plucking (R100)</span>
+  </label>
+
+  <label class="checkbox-row">
+    <input type="radio" name="customType" value="combo">
+    <span>Bleaching + Plucking Combo (R200)</span>
+  </label>
+</div>
+
+
+    <!-- EMERGENCY -->
+   <div id="emergencyOption" class="option-group">
+  <label class="checkbox-row">
+    <input type="checkbox" id="emergency">
+    <span>Same-day emergency booking (+R50)</span>
+  </label>
+</div>
+
+
+    <input type="date" id="date" required />
+    <input type="time" id="time" required />
+
+    <!-- TOTAL -->
+    <p id="totalPrice" style="font-weight:600; margin:15px 0;">
+      Total: R0
+    </p>
+
+    <!-- POLICY AGREEMENT -->
+    <label class="checkbox-row policy">
+  <input type="checkbox" id="policy" required>
+  <span>I have read and agree to the booking & payment policy.</span>
+</label>
+
+
+    <button type="submit" class="btn">Book via WhatsApp</button>
+  </form>
+</section>
+
+
+  <!-- GALLERY -->
+<section id="gallery" class="section light">
+  <h2>Gallery</h2>
+
+  <div class="gallery">
+    <img src="assets/1.jpeg" alt="Luxury wig install 1">
+    <img src="assets/2.jpeg" alt="Luxury wig install 2">
+    <img src="assets/3.jpeg" alt="Luxury wig install 3">
+    <img src="assets/4.jpeg" alt="Luxury wig install 4">
+    <img src="assets/5.jpeg" alt="Luxury wig install 5">
+    <img src="assets/6.jpeg" alt="Luxury wig install 6">
+    <img src="assets/7.jpeg" alt="Luxury wig install 7">
+    <img src="assets/8.jpeg" alt="Luxury wig install 8">
+  </div>
+</section>
+
+
+  <section id="policies" class="section light">
+  <h2>Policies & Payments</h2>
+
+  <div class="policy-box">
+    <p>
+      A <strong>50% deposit</strong> of your selected service is required to secure
+      your appointment.
+    </p>
+
+    <p>
+      Once payment has been made, please send <strong>proof of payment</strong>
+      with your <strong>name</strong> and <strong>preferred appointment time</strong>
+      as the reference.
+    </p>
+
+    <p>
+      <strong>Cancellations</strong> must be made at least
+      <strong>24 hours before</strong> the scheduled appointment.
+      Failure to do so will result in the <strong>forfeiture of the deposit</strong>.
+    </p>
+
+    <div class="bank-details">
+      <h3>Banking Details</h3>
+      <p>Bank: Capitec</p>
+      <p>Account Number: <strong>1778323586</strong></p>
+      <p>Account Holder: <strong>Miss R.F. Baloyi</strong></p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+
+    <p>
+      📍 1105 Prospect St, Hatfield, Pretoria 0028 
+      📞 WhatsApp: +27 79 276 1800
+       <i class="fa-brands fa-tiktok"></i>
+      🎵 TikTok: <a 
+    href="https://www.tiktok.com/@fumishairhaven?_r=1&_t=ZS-93q7TBaa6Z3" 
+    target="_blank" 
+    class="social-link"
+  >
+    <i class="fa-brands fa-tiktok"></i>
+    @fumishairhaven
+  </a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Fumi’s Hair Haven. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
