@@ -13,6 +13,7 @@
   --gold: #c7b28c;
 }
 
+
 /* BASE */
 body {
   font-family: 'Poppins', sans-serif;
@@ -252,6 +253,9 @@ select {
 }
 .gallery img {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+    height: 200px;
+    object-fit: cover
 }
 
 .gallery img:hover {
@@ -289,24 +293,55 @@ select {
 }
 
 
-/* CONTACT */
-#contact p {
-  font-size: 15px;
-}
-.social-link {
-  color: var(--gold);      /* luxury gold */
-  text-decoration: none;
-  font-weight: 500;
+.contact-section {
+    padding: 100px 40px;
+    text-align: center;
 }
 
-.social-link:visited {
-  color: var(--gold);
+.contact-grid {
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
-.social-link:hover {
-  color: var(--dark);
-  text-decoration: underline;
+.contact-card {
+    background: rgba(255,255,255,0.05);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
 }
+
+.contact-card:hover {
+    transform: translateY(-6px);
+   
+}
+.contact-icon svg {
+    color: #1A1A1A;
+    opacity: 0.8;
+    transition: 0.4s ease;
+}
+
+.contact-card a,
+.contact-card a:visited,
+.contact-card a:active {
+    text-decoration: none;
+    color: #1A1A1A;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #C6A75E; /* gold accent */
+}
+
+
+
+
+
+
 
 
 /* FOOTER */
@@ -341,10 +376,32 @@ footer {
     margin: 0 10px;
   }
 
-  .hero {
-    height: 70vh;
-    padding: 20px;
-  }
+  @media (max-width: 768px) {
+
+    .hero {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons button {
+        width: 100%;
+    }
+
+}
 
   .hero-content {
     padding: 30px 25px;
@@ -357,9 +414,45 @@ footer {
   .gallery img {
     height: 220px;
   }
+
+  .gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 4px;
 }
+}
+
 @media (max-width: 768px) {
   .logo-text {
     font-size: 22px;
   }
 }
+@media (max-width: 768px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
