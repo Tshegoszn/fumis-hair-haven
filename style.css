@@ -1,8 +1,12 @@
-/* RESET */
+
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
 }
 
 /* ROOT VARIABLES (luxury palette) */
@@ -356,102 +360,51 @@ footer {
 /* MOBILE POLISH */
 @media (max-width: 768px) {
 
-  h1 {
-    font-size: 30px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  .navbar {
-    flex-direction: column;
-  }
-
-  .navbar nav {
-    margin-top: 10px;
-  }
-
-  .navbar nav a {
-    margin: 0 10px;
-  }
-
-  @media (max-width: 768px) {
-
-    .hero {
-        padding: 80px 20px;
+    /* Contact Section Container */
+    .contact-section {
+        padding: 70px 20px;
         text-align: center;
     }
 
-    .hero h1 {
-        font-size: 2rem;
-        line-height: 1.3;
+    /* Title */
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 40px;
     }
 
-    .hero p {
-        font-size: 0.95rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .hero-buttons button {
-        width: 100%;
-    }
-
-}
-
-  .hero-content {
-    padding: 30px 25px;
-  }
-
-  .section {
-    padding: 60px 20px;
-  }
-
-  .gallery img {
-    height: 220px;
-  }
-
-  .gallery img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-}
-
-@media (max-width: 768px) {
-  .logo-text {
-    font-size: 22px;
-  }
-}
-@media (max-width: 768px) {
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-card {
-        padding: 30px 20px;
-    }
-
-}
-@media (max-width: 768px) {
-
+    /* Stack cards vertically */
     .contact-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 25px;
+        margin: 0 auto;
     }
 
-}
-@media (max-width: 600px) {
+    /* Card Styling */
+    .contact-card {
+        width: 100%;
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
 
-    nav {
-        flex-direction: column;
-        gap: 15px;
+    /* Icon Circle */
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 15px;
+    }
+
+    /* Headings */
+    .contact-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    /* Text + Links */
+    .contact-card p,
+    .contact-card a {
+        font-size: 0.95rem;
+        word-break: break-word;
     }
 
 }
