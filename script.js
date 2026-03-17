@@ -1,11 +1,26 @@
+/* =========================
+   1. ELEMENTS
+========================= */
 const serviceSelect = document.getElementById("service");
 const customOptions = document.getElementById("customOptions");
 const emergencyOption = document.getElementById("emergencyOption");
+const emergencyCheckbox = document.getElementById("emergency");
 const totalPriceEl = document.getElementById("totalPrice");
+const bookingForm = document.getElementById("bookingForm");
 
+const toggle = document.getElementById("menu-toggle");
+const nav = document.getElementById("nav-links");
+
+
+/* =========================
+   2. STATE
+========================= */
 let total = 0;
 
-// PRICING
+
+/* =========================
+   3. PRICING
+========================= */
 const prices = {
   installation: 220,
   installStyle: 280,
@@ -16,63 +31,75 @@ const prices = {
   emergency: 50
 };
 
-// SERVICE CHANGE
-serviceSelect.addEventListener("change", () => {
-  total = 0;
 
-  // Reset & hide conditional options
-  customOptions.style.display = "none";
-  emergencyOption.style.display = "none";
-  document.getElementById("emergency").checked = false;
-
-  if (serviceSelect.value === "installation") {
-    total = prices.installation;
-    emergencyOption.style.display = "block";
-  }
-
-  if (serviceSelect.value === "install-style") {
-    total = prices.installStyle;
-  }
-
-  if (serviceSelect.value === "laundry") {
-    total = prices.laundry;
-  }
-
-  if (serviceSelect.value === "customisation") {
-    customOptions.style.display = "block";
-    total = 0;
-  }
-
-  updateTotal();
-});
-
-
-// CUSTOMISATION OPTIONS
-document.querySelectorAll("input[name='customType']").forEach(option => {
-  option.addEventListener("change", () => {
-    if (option.value === "bleaching") total = prices.bleaching;
-    if (option.value === "plucking") total = prices.plucking;
-    if (option.value === "combo") total = prices.combo;
-    updateTotal();
-  });
-});
-
-// EMERGENCY CHECK
-document.getElementById("emergency").addEventListener("change", function () {
-  if (this.checked) {
-    total += prices.emergency;
-  } else {
-    total -= prices.emergency;
-  }
-  updateTotal();
-});
-
+/* =========================
+   4. HELPERS
+========================= */
 function updateTotal() {
   totalPriceEl.textContent = `Total: R${total}`;
 }
 
-// SUBMIT
-document.getElementById("bookingForm").addEventListener("submit", function (e) {
+function resetOptions() {
+  customOptions.style.display = "none";
+  emergencyOption.style.display = "none";
+  emergencyCheckbox.checked = false;
+}
+
+
+/* =========================
+   5. SERVICE SELECTION
+========================= */
+serviceSelect.addEventListener("change", () => {
+  total = 0;
+  resetOptions();
+
+  switch (serviceSelect.value) {
+    case "installation":
+      total = prices.installation;
+      emergencyOption.style.display = "block";
+      break;
+
+    case "install-style":
+      total = prices.installStyle;
+      break;
+
+    case "laundry":
+      total = prices.laundry;
+      break;
+
+    case "customisation":
+      customOptions.style.display = "block";
+      break;
+  }
+
+  updateTotal();
+});
+
+
+/* =========================
+   6. CUSTOMISATION OPTIONS
+========================= */
+document.querySelectorAll("input[name='customType']").forEach(option => {
+  option.addEventListener("change", () => {
+    total = prices[option.value];
+    updateTotal();
+  });
+});
+
+
+/* =========================
+   7. EMERGENCY OPTION
+========================= */
+emergencyCheckbox.addEventListener("change", () => {
+  total += emergencyCheckbox.checked ? prices.emergency : -prices.emergency;
+  updateTotal();
+});
+
+
+/* =========================
+   8. FORM SUBMIT (WHATSAPP)
+========================= */
+bookingForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const name = document.getElementById("clientName").value;
@@ -99,3 +126,35 @@ I understand a 50% deposit is required to secure my booking.
   window.open(url, "_blank");
 });
 
+
+/* =========================
+   9. MOBILE MENU
+========================= */
+if (toggle && nav) {
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+}
+
+
+/* =========================
+   10. SCROLL ANIMATION (CARDS)
+========================= */
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+
+      // stagger effect
+      setTimeout(() => {
+        entry.target.classList.add("show");
+      }, index * 150);
+
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+cards.forEach(card => observer.observe(card));
