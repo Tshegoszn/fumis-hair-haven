@@ -10,24 +10,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<header class="navbar">
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    
-    <div class="logo-text">Fumi’s Hair Haven</div>
+  <div class="logo-text">Fumi’s Hair Haven</div>
 
+  <div class="menu-toggle" id="menu-toggle">☰</div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#booking">Book</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <nav id="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Book</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
 
   <!-- HERO -->
   <section class="hero">
@@ -195,14 +195,14 @@
 
 
   <!-- CONTACT -->
-<section class="contact-section">
+<section id="contact" class="contact-section">
 
     <h2>Get In Touch</h2>
 
     <div class="contact-grid">
 
         <div class="contact-card">
-  <div class="contact-card">
+ 
             <div class="contact-icon">
                 <!-- Location Icon -->
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -215,7 +215,7 @@
         </div>
 
   <div class="contact-card">
-     <div class="contact-icon">
+      <div class="contact-icon">
                 <!-- WhatsApp Icon -->
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
                     <path d="M21 12a9 9 0 1 1-4-7.5L21 3l-1.5 4A9 9 0 0 1 21 12z"/>
