@@ -260,6 +260,14 @@ select {
   font-size: 13px;
 }
 
+input[type="date"],
+input[type="time"] {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 /* =========================
    10. GALLERY
